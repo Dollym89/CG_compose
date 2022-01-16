@@ -1,4 +1,5 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+import io.gitlab.arturbosch.detekt.Detekt
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
@@ -11,6 +12,29 @@ allprojects {
 
 plugins {
     id("com.github.ben-manes.versions")
+    id("io.gitlab.arturbosch.detekt") version "1.19.0"
+}
+
+dependencies {
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.19.0")
+}
+
+detekt {
+    source = files("$projectDir")
+    config = files("config/detekt/detekt.yml")
+    parallel = true
+}
+
+tasks.withType<Detekt>().configureEach {
+    reports {
+        xml.required.set(false)
+        html.required.set(false)
+    }
+    exclude("**/*gradle.kts")
+    exclude("**/build/**")
+    exclude("**/buildSrc/**")
+    exclude("resources")
+    exclude(".idea")
 }
 
 // For more see https://github.com/ben-manes/gradle-versions-plugin
