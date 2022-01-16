@@ -7,9 +7,13 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.*
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.filled.Bookmarks
+import androidx.compose.material.icons.filled.Explore
+import androidx.compose.material.icons.filled.PermIdentity
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -79,7 +83,6 @@ fun Navigation(navController: NavHostController) {
         composable("watchList") { WatchListScreen() }
     }
 }
-
 
 // TODO move to appropriate folder once implemented,
 // Just a place holder at the moment

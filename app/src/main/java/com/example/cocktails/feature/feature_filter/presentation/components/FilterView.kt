@@ -1,8 +1,17 @@
 package com.example.cocktails.feature.feature_filter.presentation.components
 
-import androidx.compose.animation.*
-import androidx.compose.foundation.layout.*
-import androidx.compose.runtime.*
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -46,11 +55,8 @@ fun Filter(
         }
 
         Spacer(modifier = Modifier.height(12.dp))
-        LaunchedEffect(key1 = isFilterToggled && state.lastTab != null) {
-
-        }
-
-
+//        LaunchedEffect(key1 = isFilterToggled && state.lastTab != null) {}
+//
 //        AnimatedVisibility(
 //            visible = isFilterToggled && state.lastTab != null,
 //            enter = fadeIn() + slideInVertically(),

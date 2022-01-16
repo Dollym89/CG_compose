@@ -22,7 +22,6 @@ class FilterViewModel @Inject constructor(
     private val _state = mutableStateOf(FilterState())
     val state: State<FilterState> = _state
 
-
     init {
         viewModelScope.launch { getFilterValues().collect() }
     }
@@ -61,7 +60,6 @@ class FilterViewModel @Inject constructor(
                         find { it.item.id == uiEvent.mainId }?.subItems?.forEach {
                             if (it.id == uiEvent.subId) it.btnState = ButtonState.PRESSED
                             else it.btnState = ButtonState.IDLE
-
                         }
                     }
                 )
@@ -79,7 +77,5 @@ class FilterViewModel @Inject constructor(
         val filterItems: List<MainFilterItem> = mutableListOf(),
         val selectedTabs: MutableList<Int> = mutableListOf(),
         val lastTab: Int? = null
-    ){
-
-    }
+    )
 }

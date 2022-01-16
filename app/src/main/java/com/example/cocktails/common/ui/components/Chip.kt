@@ -2,7 +2,6 @@ package com.example.cocktails.common.ui.components
 
 import androidx.compose.animation.animateColor
 import androidx.compose.animation.animateColorAsState
-import androidx.compose.animation.core.animateDp
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.BorderStroke
@@ -17,12 +16,15 @@ import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -59,26 +61,24 @@ fun Chip(
             }
         }
     }
-    val buttonWidth: Dp
-            by transition.animateDp(
-                transitionSpec = { tween(duration) },
-                label = "Button Width"
-            ) { state ->
-                when (state) {
-                    ButtonState.IDLE -> 70.dp
-                    ButtonState.PRESSED -> 32.dp
-                }
-            }
-    val textMaxWidth: Dp
-            by transition.animateDp(
-                transitionSpec = { tween(duration) },
-                label = "Text Max Width"
-            ) { state ->
-                when (state) {
-                    ButtonState.IDLE -> 40.dp
-                    ButtonState.PRESSED -> 0.dp
-                }
-            }
+//    val buttonWidth: Dp by transition.animateDp(
+//        transitionSpec = { tween(duration) },
+//        label = "Button Width"
+//    ) { state ->
+//        when (state) {
+//            ButtonState.IDLE -> 70.dp
+//            ButtonState.PRESSED -> 32.dp
+//        }
+//    }
+//    val textMaxWidth: Dp by transition.animateDp(
+//        transitionSpec = { tween(duration) },
+//        label = "Text Max Width"
+//    ) { state ->
+//        when (state) {
+//            ButtonState.IDLE -> 40.dp
+//            ButtonState.PRESSED -> 0.dp
+//        }
+//    }
 
     val buttonTextColor: Color by animateColorAsState(
         if (buttonState == ButtonState.PRESSED) {

@@ -1,4 +1,4 @@
- package com.example.cocktails.common.ui.theme
+package com.example.cocktails.common.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
@@ -7,7 +7,7 @@ import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 
- // TODO call to designer :D :D Its his fault
+// TODO call to designer :D :D Its his fault
 private val DarkColorPalette = darkColors(
     primary = Purple200,
     primaryVariant = Purple700,
@@ -16,7 +16,7 @@ private val DarkColorPalette = darkColors(
 
 private val LightColorPalette = lightColors(
     primary = Indigo500,
-    primaryVariant = Indigo500 ,
+    primaryVariant = Indigo500,
     secondary = BlueLight,
 
     // Other default colors to override
@@ -29,23 +29,23 @@ private val LightColorPalette = lightColors(
 
 )
 
- @Composable
- fun CocktailsTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
-     val colors = if (darkTheme) {
-         DarkColorPalette
-     } else {
-         LightColorPalette
-     }
+@Composable
+fun CocktailsTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable() () -> Unit) {
+    val colors = if (darkTheme) {
+        DarkColorPalette
+    } else {
+        LightColorPalette
+    }
 
-     CompositionLocalProvider(
-         LocalSpace provides Space(),
-         LocalElevation provides Elevation()
-     ) {
-         MaterialTheme(
-             colors = colors,
-             typography = Typography,
-             shapes = Shapes,
-             content = content
-         )
-     }
- }
+    CompositionLocalProvider(
+        LocalSpace provides Space(),
+        LocalElevation provides Elevation()
+    ) {
+        MaterialTheme(
+            colors = colors,
+            typography = Typography,
+            shapes = Shapes,
+            content = content
+        )
+    }
+}

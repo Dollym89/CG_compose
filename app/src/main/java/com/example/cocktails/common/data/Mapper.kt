@@ -13,10 +13,9 @@ abstract class Mapper<In, Out> : (In) -> Out {
         p1.runCatching {
             convert()
         }.recover {
-            log(p1, it)
+            log(input = p1, e = it)
             throw MapperException(it)
         }.getOrThrow()
-
 
     abstract fun In.convert(): Out
 }

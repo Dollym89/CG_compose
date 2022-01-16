@@ -12,7 +12,7 @@ object IngredientEntityMapper : Mapper<IngredientEntity, Ingredient>() {
             name = name,
             nameGrouped = nameGrouped,
             nameModif = nameModif,
-            voltage = voltage, //only for alcoholic
+            voltage = voltage, // only for alcoholic
             preparation = preparation, // only for non alcoholic
             desc = desc,
             imgFileName = imgFileName,

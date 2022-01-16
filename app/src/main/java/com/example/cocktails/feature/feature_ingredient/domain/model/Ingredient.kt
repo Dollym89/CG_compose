@@ -5,7 +5,7 @@ data class Ingredient(
     val name: String,
     val nameGrouped: String,
     val nameModif: String,
-    val voltage: Double = -1.0, //only for alcoholic
+    val voltage: Double = -1.0, // only for alcoholic
     val preparation: String = "", // only for non alcoholic
     val desc: String,
     val imgFileName: String,
